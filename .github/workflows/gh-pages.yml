@@ -18,10 +18,11 @@ jobs:
 
       - name: Build static files
         run: |
-          mkdir dist
+          mkdir -p dist/r
           cp -avr index.html CNAME background.jpg calendar.html dist/
           cp -avr js dist/js
           cp -avr tmpls dist/tmpls
+          cp -avr r/*.html dist/r/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
