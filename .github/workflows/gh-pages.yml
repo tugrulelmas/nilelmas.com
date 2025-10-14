@@ -1,18 +1,31 @@
 name: Build and Deploy
-on: [push]
+on:
+  push:
+    branches:
+      - master
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@master
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BASE_BRANCH: master # The branch the action should deploy from.
-        BRANCH: gh-pages # The branch the action should deploy to.
-        FOLDER: dist # The folder the action should deploy.
-        BUILD_SCRIPT: |
-          mkdir dist && cp -avr index.html CNAME background.jpg calendar.html dist/ && cp -avr js dist/js && cp -avr tmpls dist/tmpls
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build static files
+        run: |
+          mkdir dist
+          cp -avr index.html CNAME background.jpg calendar.html dist/
+          cp -avr js dist/js
+          cp -avr tmpls dist/tmpls
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages          # Deploy edilecek branch
+          folder: dist              # Deploy edilecek klasör
+          token: ${{ secrets.ACCESS_TOKEN }}
