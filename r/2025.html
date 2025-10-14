@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nil'le Yıllık Röportaj – İlk Sene</title>
+  <meta name="color-scheme" content="light">
+  <style>
+    /* ========== Mobil Öncelikli Tasarım Değerleri ========== */
+    :root{
+      --bg:#f7f8fa;
+      --surface:#ffffff;
+      --ink:#111214;
+      --muted:#5b6470;
+      --border:#e5e7eb;
+      --accent:#0ea5e9;
+      --radius:16px;
+
+      /* akıcı boyutlar */
+      --fs-base: clamp(16px, 2.5vw, 18px);
+      --fs-title: clamp(22px, 5.5vw, 32px);
+      --fs-q: clamp(17px, 3.5vw, 19px);
+      --pad-wrap: clamp(14px, 4vw, 24px);
+      --pad-card: clamp(12px, 3.5vw, 20px);
+      --num-size: clamp(36px, 8vw, 48px);
+    }
+
+    /* Sistem genel ayarlar */
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);}
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-size: var(--fs-base);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    :focus-visible{outline:3px solid var(--accent); outline-offset:3px;}
+    @media (prefers-reduced-motion: reduce){
+      *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+    }
+
+    /* Yerleşim */
+    .wrap{
+      max-width: 920px;
+      margin: 0 auto;
+      padding: var(--pad-wrap);
+    }
+
+    header.hero{
+      background: var(--surface);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding: var(--pad-card);
+      box-shadow: 0 8px 24px rgba(17,18,20,.06);
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:.5rem;
+      padding:.5rem .75rem; border-radius:999px;
+      background:#e6f7fd; color:#075985; border:1px solid #bae6fd;
+      font-weight:700; font-size: .9em;
+    }
+    h1{
+      margin:.6rem 0 .25rem; font-size: var(--fs-title); line-height:1.2; font-weight:800;
+      letter-spacing:.2px;
+    }
+    .meta{
+      display:flex; flex-wrap:wrap; gap:.75rem; color:var(--muted);
+    }
+    .meta b{color:var(--ink);}
+
+    main.card{
+      margin-top: .9rem;
+      background: var(--surface);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 8px 24px rgba(17,18,20,.06);
+      padding: var(--pad-card);
+    }
+
+    /* Soru–Cevap Listesi */
+    ol{list-style:none;margin:0;padding:0;}
+    li{
+      display:grid;
+      grid-template-columns: var(--num-size) 1fr;
+      gap: .9rem;
+      padding: .9rem .25rem;
+      border-bottom:1px solid var(--border);
+    }
+    li:last-child{border-bottom:none;}
+    .num{
+      width: var(--num-size); height: var(--num-size);
+      border-radius: 12px;
+      display:grid; place-items:center;
+      background:#e6f7fd; color:#0c4a6e; font-weight:800;
+      border:1px solid #bae6fd;
+      flex: 0 0 var(--num-size);
+    }
+    .q{font-weight:800; font-size: var(--fs-q);}
+    .a{margin-top:.25rem;}
+
+    footer{margin: .9rem .1rem 0; color:var(--muted); font-size: .95em;}
+
+    /* Küçük ekranlarda kenar boşluklarını artır (okuma kolaylığı) */
+    @media (max-width: 420px){
+      .wrap{padding-left: max(12px, env(safe-area-inset-left)); padding-right: max(12px, env(safe-area-inset-right));}
+      li{padding: .85rem 0;}
+    }
+
+    /* Yazdırma */
+    @media print{
+      body{background:#fff;}
+      .wrap{padding:0; max-width: 100%;}
+      header.hero, main.card{box-shadow:none; border-color:#ddd;}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero" role="banner">
+      <span class="badge">Nil'le Yıllık Röportaj · İlk Sene</span>
+      <h1>Röportaj</h1>
+      <div class="meta" aria-label="Röportaj bilgileri">
+        <div><b>Tarih:</b> 12.10.2025</div>
+        <div><b>Röportaj Yapılan:</b> Nil Elmas</div>
+        <div><b>Röportajı Yapan:</b> Tuğrul Elmas</div>
+      </div>
+    </header>
+
+    <main class="card" role="main">
+      <ol>
+        <li>
+          <div class="num">1</div>
+          <div>
+            <div class="q">Seni en çok mutlu eden şey nedir?</div>
+            <div class="a">Dondurma.</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">2</div>
+          <div>
+            <div class="q">En sevdiğin oyun hangisi?</div>
+            <div class="a">Tatilcilik.</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">3</div>
+          <div>
+            <div class="q">En sevdiğin yemek ne?</div>
+            <div class="a">Spagetti.</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">4</div>
+          <div>
+            <div class="q">En sevdiğin renk hangisi?</div>
+            <div class="a">Pembe veya mor; ikisinden birini seçmek çok zor.</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">5</div>
+          <div>
+            <div class="q">En sevdiğin hayvan hangisi?</div>
+            <div class="a">Kedi.</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">6</div>
+          <div>
+            <div class="q">En sevdiğin kitap ya da hikâye nedir?</div>
+            <div class="a"><em>Küçük Cinler Kitabı</em>.</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">7</div>
+          <div>
+            <div class="q">En çok kimle vakit geçirmeyi seviyorsun?</div>
+            <div class="a">Zor bir soru; anne ve babadan birini seçmek zor ama yine de <strong>anne</strong>. (Baba :( )</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">8</div>
+          <div>
+            <div class="q">Büyüyünce ne olmak istiyorsun?</div>
+            <div class="a">Bebek bakıcısı; çünkü kardeşim olmasını istiyorum.</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">9</div>
+          <div>
+            <div class="q">Seni en çok güldüren şey ne?</div>
+            <div class="a">Babamın gıdıklaması.</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">10</div>
+          <div>
+            <div class="q">En çok korktuğun şey nedir?</div>
+            <div class="a">Hiçbir şeyden korkmuyorum.</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">11</div>
+          <div>
+            <div class="q">Bir dilek hakkın olsa ne dilerdin?</div>
+            <div class="a">Maceracı ve dedektif olmayı dilerdim.</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">12</div>
+          <div>
+            <div class="q">Okulda (ya da gittiğin yerde) en çok neyi seviyorsun?</div>
+            <div class="a">Matematik.</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">13</div>
+          <div>
+            <div class="q">En yakın arkadaşın kim ve neden?</div>
+            <div class="a">Yaz, Ela ve Talya arasında seçim yapamıyorum.</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">14</div>
+          <div>
+            <div class="q">Anne senin için ne ifade ediyor?</div>
+            <div class="a">Oyun.</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">15</div>
+          <div>
+            <div class="q">Baba senin için ne ifade ediyor?</div>
+            <div class="a">Resim.</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">16</div>
+          <div>
+            <div class="q">Bir günü istediğin gibi geçirebilsen neler yaparsın?</div>
+            <div class="a">Ela’yla buluşup havuza giderdim.</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">17</div>
+          <div>
+            <div class="q">Nerede yaşamak istiyorsun?</div>
+            <div class="a">Marmaris.</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">18</div>
+          <div>
+            <div class="q">Bu zamana kadar yaptığın en iyi tatil hangisidir?</div>
+            <div class="a">2024 Marmaris tatili.</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">19</div>
+          <div>
+            <div class="q">En çok hangi süper güce sahip olmak isterdin?</div>
+            <div class="a">Geleceği görme gücü.</div>
+          </div>
+        </li>
+        <li>
+          <div class="num">20</div>
+          <div>
+            <div class="q">Bir gün boyunca istediğin biriyle yer değiştirebilseydin, kim olmak isterdin?</div>
+            <div class="a">Ayça; çünkü Ela, Ayça’nın yanında oturuyor.</div>
+          </div>
+        </li>
+      </ol>
+
+      <footer>
+        © 2025 Nil’in Yıllık Röportaj Serisi
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
